@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNG Empire</title>
+    <!-- Preload Fonts -->
+    <link 
+        rel="preload" 
+        href="https://fonts.googleapis.com/css2?family=Gloucester+MT&family=Gill+Sans+MT&display=swap" 
+        as="style" 
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link 
+            href="https://fonts.googleapis.com/css2?family=Gloucester+MT&family=Gill+Sans+MT&display=swap" 
+            rel="stylesheet"
+        />
+    </noscript>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Custom Utility Classes */
+        .gloucester-font {
+            font-family: 'Gloucester MT', sans-serif;
+        }
+        .gill-sans-font {
+            font-family: 'Gill Sans MT', sans-serif;
+        }
+        .high-tower-text {
+            font-family: 'Gill Sans MT', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-black text-white gloucester-font">
+    <div class="container mx-auto">
+    <!-- Header -->
+    <header class="container mx-auto p-0 min-h-screen flex flex-col justify-between">
+        <!-- Navbar -->
+        <nav class="flex justify-between items-center">
+            <div class="text-white fixed top-4 left-4 z-50">
+                <i class="fas fa-bars text-2xl cursor-pointer" id="menu-toggle" aria-label="Toggle navigation menu"></i>
+            </div>
+            <div class="fixed top-4 right-4 z-50">
+                <button class="bg-white text-black px-4 py-2 rounded-full gill-sans-font">LOGIN</button>
+            </div>
+        </nav>
+
+        <!-- Section 1: Search Bar and Welcome Text -->
+        <section class="w-full mt-4 flex flex-col items-center justify-center min-h-screen">
+            <div class="flex justify-center w-full max-w-xs">
+                <div class="relative w-full">
+                    <input 
+                        class="w-full py-2 pl-4 pr-10 rounded-full text-black text-sm" 
+                        placeholder="Carian" 
+                        type="text"
+                        aria-label="Search"
+                    />
+                    <i class="fas fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-black text-sm"></i>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <h1 class="text-yellow-500 text-4xl">Welcome, to</h1>
+                <h2 class="text-4xl">DNG EMPIRE</h2>
+            </div>
+            <!-- Slideshow -->
+            <div class="slideshow-container w-full mt-8 relative overflow-hidden">
+                <div class="mySlides fade">
+                    <img 
+                        alt="slideshow1" 
+                        class="w-full" 
+                        src="img/Component 196 – 1.png" 
+                        loading="lazy"
+                        srcset="img/Component 196 – 1.png 1x, img/Component 196 – 1@2x.png 2x"
+                    />
+                </div>
+                <div class="mySlides fade">
+                    <img 
+                        alt="slideshow2" 
+                        class="w-full" 
+                        src="img/Component 195 – 1.png" 
+                        loading="lazy"
+                        srcset="img/Component 195 – 1.png 1x, img/Component 195 – 1@2x.png 2x"
+                    />
+                </div>
+                <div class="mySlides fade">
+                    <img 
+                        alt="slideshow3" 
+                        class="w-full" 
+                        src="img/Component 194 – 1.png" 
+                        loading="lazy"
+                        srcset="img/Component 194 – 1.png 1x, img/Component 194 – 1@2x.png 2x"
+                    />
+                </div>
+            </div>
+            <!-- Dots -->
+            <div class="flex justify-center mt-4">
+                <span class="dot cursor-pointer" onclick="currentSlide(1)" aria-label="Slide 1"></span>
+                <span class="dot cursor-pointer" onclick="currentSlide(2)" aria-label="Slide 2"></span>
+                <span class="dot cursor-pointer" onclick="currentSlide(3)" aria-label="Slide 3"></span>
+            </div>
+            <!-- Button -->
+            <div class="flex justify-center mt-8 mb-4">
+                <button class="bg-black text-yellow-500 border border-yellow-500 px-6 py-2 rounded-full gill-sans-font">HUBUNGI KAMI</button>
+            </div>
+        </section>
+    </header>
+
+        <!-- Section 2: Video and Images -->
+        <section class="w-full relative z-10 flex flex-col items-center py-8 min-h-screen">
+            <div class="flex flex-col items-center justify-center py-8">
+                <img 
+                    alt="Logo" 
+                    class="mb-4" 
+                    height="100" 
+                    src="img/CNG LOGO-1@2x.png" 
+                    width="100"
+                    loading="lazy"
+                />
+            </div>
+            <div class="w-full flex justify-center py-8" id="video-section">
+                <iframe 
+                    id="youtube-video" 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/hRd_KX4SqPk?enablejsapi=1" 
+                    frameborder="0" 
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="flex flex-col items-center justify-center py-8">
+                <img 
+                    alt="Logo" 
+                    class="mb-4" 
+                    height="100" 
+                    src="img/CNG LOGO-1@2x.png" 
+                    width="100"
+                    loading="lazy"
+                />
+            </div>
+        </section>
+
+        <!-- Section 3: Quote Background -->
+        <section class="w-full relative z-10 flex items-center justify-center min-h-screen bg-gray-500">
+            <div class="absolute inset-0 w-full h-full">
+                <img 
+                    alt="background2" 
+                    class="w-full h-full object-cover" 
+                    src="img/Component 178 – 1@2x.png" 
+                    loading="lazy"
+                />
+            </div>
+        </section>
+
+        <!-- Section 4: Bisnes Yang Dijalankan -->
+        <section id="section-4" class="w-full font-roboto split-background min-h-screen flex flex-col items-center justify-center">
+            <div class="flex-grow flex flex-col items-center justify-center">
+                <h1 class="text-2xl font-bold text-[#B29126] mb-16 gloucester-font">BISNES YANG DIJALANKAN</h1>
+                <div class="flex flex-col items-center">
+                    <img 
+                        alt="A physical store with a counter and stools" 
+                        class="w-3/4 max-w-md mb-4" 
+                        height="300" 
+                        src="img/Rectangle 395@2x.png" 
+                        width="400"
+                        loading="lazy"
+                    />
+                    <p class="text-lg text-white high-tower-text">Kedai Fizikal</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4.1 -->
+        <section class="w-full font-roboto split-background min-h-screen flex flex-col items-center justify-center">
+            <div class="flex-grow flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <img alt="A physical store with a counter and stools" class="w-3/4 max-w-md mb-4" height="300" src="img/Rectangle 396@2x.png" width="400"/>
+                    <p class="text-lg text-white high-tower-text">Perhiasan Emas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4.2 -->
+        <section class="w-full font-roboto split-background min-h-screen flex flex-col items-center justify-center">
+            <div class="flex-grow flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <img alt="A physical store with a counter and stools" class="w-3/4 max-w-md mb-4" height="300" src="img/Rectangle 397@2x.png" width="400"/>
+                    <p class="text-lg text-white high-tower-text">Perhiasan Perak</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4.3 -->
+        <section class="w-full font-roboto split-background min-h-screen flex flex-col items-center justify-center">
+            <div class="flex-grow flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <img alt="A physical store with a counter and stools" class="w-3/4 max-w-md mb-4" height="300" src="img/Rectangle 398@2x.png" width="400"/>
+                    <p class="text-lg text-white high-tower-text">Perhiasan Batu Permata</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Gold and Silver Campaign -->
+        <section class="w-full bg-black text-center text-yellow-500 min-h-screen flex flex-col items-center justify-center py-16">
+            <div class="p-4">
+                <h1 class="text-4xl font-bold mb-8">KEMPEN SIMPAN EMAS DAN PERAK</h1>
+                <div class="mt-12">
+                    <div class="mx-auto max-w-xs">
+                        <img alt="gambar1" class="rounded-lg" height="200" src="img/Component 125 – 5@2x.png" width="300"/>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <div class="mx-auto max-w-xs">
+                        <img alt="gambar2" class="rounded-lg" height="200" src="img/1.jpg" width="300"/>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <div class="mx-auto max-w-xs">
+                        <img alt="gambar3" class="rounded-lg" height="200" src="img/2.jpg" width="300"/>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <div class="mx-auto max-w-xs">
+                        <img alt="gambar4" class="rounded-lg" height="200" src="img/3.jpg" width="300"/>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <div class="mx-auto max-w-xs">
+                        <img alt="gambar4" class="rounded-lg" height="200" src="img/3.jpg" width="300"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Lebih Jimat -->
+        <section class="w-full bg-[#B29126] min-h-screen flex flex-col items-center justify-center text-center text-white haettenschweiler">
+            <div class="text-5xl font-bold mb-8 text-[#5F4C14] tracking-wider">LEBIH JIMAT !</div>
+            <div class="border-t border-b border-white py-8 px-8 mb-8">
+                <div class="text-4xl font-bold mb-4 tracking-wider">ITEM 'PRELOVED'</div>
+                <div class="text-4xl font-bold mb-4 tracking-wider">JIMAT TANPA</div>
+                <div class="text-4xl font-bold tracking-wider">KOS UPAH</div>
+            </div>
+            <div class="text-5xl font-bold text-[#5F4C14] tracking-wider">SAVE MORE !</div>
+        </section>
+
+        <!-- Section 7: Preloved Jewelry -->
+        <section class="w-full bg-[#B29126] min-h-screen flex flex-col items-center justify-center py-16">
+            <div class="flex flex-col items-center space-y-8 p-4">
+                <div class="bg-white p-2">
+                    <img alt="gambar5" class="w-64 h-64 object-cover rounded-lg" src="img/Rectangle 427.png"/>
+                </div>
+                <div class="bg-white p-2">
+                    <img alt="gambar6" class="w-64 h-64 object-cover rounded-lg" src="img/Rectangle 428.png"/>
+                </div>
+                <div class="bg-white p-2">
+                    <img alt="gambar7" class="w-64 h-64 object-cover rounded-lg" src="img/Rectangle 429.png"/>
+                </div>
+                <div class="bg-white p-2">
+                    <img alt="gambar8" class="w-64 h-64 object-cover rounded-lg" src="img/Rectangle 430.png"/>
+                </div>
+                <div class="bg-white p-2">
+                    <img alt="gambar9" class="w-64 h-64 object-cover rounded-lg" src="img/Rectangle 431.png"/>
+                </div>
+                <div class="bg-white p-2">
+                    <img alt="gambar10" class="w-64 h-64 object-cover rounded-lg" src="img/Rectangle 432.png"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Custom Jewelry -->
+        <section class="w-full bg-white flex flex-col items-center justify-center min-h-screen py-16">
+            <div class="mb-16">
+                <div class="flex flex-col items-center">
+                    <h1 class="font-gloucester text-4xl mt-4">KAMI REALISASIKAN CITARASA ANDA</h1>
+                    <div class="flex flex-row mt-8">
+                        <div class="flex flex-col items-center">
+                            <span class="font-gill-sans mb-1.5">C</span>
+                            <span class="font-gill-sans mb-1.5">U</span>
+                            <span class="font-gill-sans mb-1.5">S</span>
+                            <span class="font-gill-sans mb-1.5">T</span>
+                            <span class="font-gill-sans mb-1.5">O</span>
+                            <span class="font-gill-sans mb-1.5">M</span>
+                        </div>
+                        <div class="flex flex-col ml-8">
+                            <div class="box flex items-center justify-center mb-4">
+                                <span class="font-haettenschweiler text-black">Perhiasan</span>
+                            </div>
+                            <div class="box flex items-center justify-center mb-4">
+                                <span class="font-haettenschweiler text-black">Ukir</span>
+                            </div>
+                            <div class="box flex items-center justify-center">
+                                <span class="font-haettenschweiler text-black">Nama</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="p-1 flex justify-center">
+                    <img alt="gambar11" height="150" src="img/Rectangle 295.png" width="250"/>
+                </div>
+                <div class="p-1 flex justify-center">
+                    <img alt="gambar12" height="150" src="img/Rectangle 296.png" width="250"/>
+                </div>
+                <div class="p-1 flex justify-center">
+                    <img alt="gambar13" height="150" src="img/Rectangle 297.png" width="250"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Coin Emas Mengikut Permintaan -->
+        <section class="w-full bg-black text-center text-yellow-500 min-h-screen flex flex-col items-center justify-center">
+            <div class="p-4">
+                <h1 class="mt-4 text-4xl font-gloucester">COIN EMAS<br/>MENGIKUT PERMINTAAN</h1>
+            </div>
+            <div class="mt-8 space-y-8 pb-16">
+                <div class="mx-4">
+                    <img alt="gambar14" class="rounded-lg mx-auto" height="150" src="img/Component 71 – 5@2x.png" width="300"/>
+                </div>
+                <div class="mx-4">
+                    <img alt="gambar15" class="rounded-lg mx-auto" height="150" src="img/Component 72 – 3@2x.png" width="300"/>
+                </div>
+                <div class="mx-4">
+                    <img alt="gambar16" class="rounded-lg mx-auto" height="150" src="img/Component 73 – 5@2x.png" width="300"/>
+                </div>
+                <div class="mx-4">
+                    <img alt="gambar17" class="rounded-lg mx-auto" height="150" src="img/Component 74 – 5@2x.png" width="300"/>
+                </div>
+                <div class="mx-4">
+                    <img alt="gambar18" class="rounded-lg mx-auto" height="150" src="img/Component 75 – 5@2x.png" width="300"/>
+                </div>
+                <div class="mx-4">
+                    <img alt="gambar19" class="rounded-lg mx-auto" height="150" src="img/Component 108 – 5@2x.png" width="300"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Menerima Tempahan Gubahan Bunga -->
+        <section class="w-full font-roboto split-background min-h-screen flex flex-col items-center justify-center">
+            <div class="flex-grow flex flex-col items-center justify-center">
+                <h1 class="text-4xl font-bold text-[#B29126] mb-16 gloucester-mt text-center leading-tight">MENERIMA GUBAHAN<br>TEMPAHAN BUNGA</h1>
+                <div class="flex flex-col items-center">
+                    <img alt="gambar20" class="w-3/4 max-w-md mb-4" height="300" src="img/Rectangle 399@2x.png" width="400"/>
+                    <p class="text-lg text-white high-tower-text">Hadiah Istimewa</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10.1 -->
+        <section class="w-full font-roboto split-background min-h-screen flex flex-col items-center justify-center">
+            <div class="flex-grow flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <img alt="gambar20" class="w-3/4 max-w-md mb-4" height="300" src="img/Rectangle 400@2x.png" width="400"/>
+                    <p class="text-lg text-white high-tower-text">Pertunangan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10.2 -->
+        <section class="w-full font-roboto split-background min-h-screen flex flex-col items-center justify-center">
+            <div class="flex-grow flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <img alt="gambar20" class="w-3/4 max-w-md mb-4" height="300" src="img/Rectangle 401@2x.png" width="400"/>
+                    <p class="text-lg text-white high-tower-text">Perkahwinan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: Perkhidmatan Yang Disediakan -->
+        <section class="w-full bg-[#B29126] text-white font-serif">
+            <div class="container mx-auto p-4">
+                <div class="text-center mt-8">
+                    <h1 class="font-gloucester text-3xl text-white">PERKHIDMATAN YANG DISEDIAKAN</h1>
+                </div>
+                <div class="mt-8">
+                    <div class="flex flex-col items-center">
+                        <img alt="Tukar barang kemas" class="border-4 border-white" height="180" src="img/Rectangle 444.png" width="270"/>
+                        <p class="mt-4 text-xl">Pertukangan Barang Kemas</p>
+                    </div>
+                    <div class="flex flex-col items-center mt-8">
+                        <img alt="repair barang kemas" class="border-4 border-white" height="180" src="img/Rectangle 324.png" width="270"/>
+                        <p class="mt-4 text-xl">Baik Pulih & Cuci Baru</p>
+                    </div>
+                    <div class="flex flex-col items-center mt-8">
+                        <img alt="ikat" class="border-4 border-white" height="180" src="img/Rectangle 326.png" width="270"/>
+                        <p class="mt-4 text-xl">Ikat Batu Permata Untuk<br/>Perhiasan Emas Dan Perak</p>
+                    </div>
+                    <div class="flex flex-col items-center mt-8">
+                        <img alt="tindik telinga" class="border-4 border-white" height="180" src="img/Rectangle 327.png" width="270"/>
+                        <p class="mt-4 text-xl">Tindik Telinga</p>
+                    </div>
+                    <div class="flex flex-col items-center mt-8">
+                        <img alt="kumpul emas" class="border-4 border-white" height="180" src="img/Component 150 – 2.png" width="270"/>
+                        <p class="mt-4 text-xl">Kumpulan Penyimpan Emas</p>
+                    </div>
+                    <div class="flex flex-col items-center mt-8">
+                        <img alt="ansuran" class="border-4 border-white" height="180" src="img/Component 150 – 1.png" width="270"/>
+                        <p class="mt-4 text-xl">Pelan Ansuran</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 12: Pelan Ansuran -->
+        <section class="w-full bg-black text-white min-h-screen flex flex-col items-center justify-center py-16">
+            <div class="container mx-auto p-4">
+                <div class="text-center">
+                    <h1 class="font-gloucester text-white text-4xl mb-8">PELAN ANSURAN</h1>
+                </div>
+                <div class="mt-8 space-y-8">
+                    <div class="mx-auto max-w-xs">
+                        <img alt="gambar21" class="w-full rounded-lg" height="200" src="img/Component 160 – 1@2x.png" width="300"/>
+                    </div>
+                    <div class="mx-auto max-w-xs">
+                        <img alt="gambar22" class="w-full rounded-lg" height="200" src="img/Component 163 – 1@2x.png" width="300"/>
+                    </div>
+                    <div class="mx-auto max-w-xs">
+                        <img alt="gambar23" class="w-full rounded-lg" height="200" src="img/Component 164 – 1@2x.png" width="300"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 13: Bisnes Sampingan -->
+        <section class="w-full bg-white flex flex-col items-center justify-center min-h-screen py-16 px-4">
+            <div class="text-center w-full">
+                <h1 class="gloucester-font text-4xl md:text-5xl mb-12">BISNES SAMPINGAN<br/>(PRODUK KESIHATAN<br/>DAN KECANTIKAN)</h1>
+
+                <!-- Wake Up Coffee -->
+                <div class="flex flex-col items-center mb-12">
+                    <img alt="Wake Up Coffee" class="w-full max-w-xs md:max-w-md" height="600" src="img/Rectangle 54@2x.png" width="400"/>
+                    <div class="bg-[#EFE0B5] py-2 px-4 mt-4 w-full max-w-xs md:max-w-md">
+                        <h2 class="text-2xl md:text-3xl font-bold text-center text-black">WAKE UP COFFEE</h2>
+                    </div>
+                </div>
+
+                <!-- Power Up Coffee -->
+                <div class="flex flex-col items-center mb-12">
+                    <img alt="Power Up Coffee" class="w-full max-w-xs md:max-w-md" height="600" src="img/Rectangle 70@2x.png" width="400"/>
+                    <div class="bg-[#EFE0B5] py-2 px-4 mt-4 w-full max-w-xs md:max-w-md">
+                        <h2 class="text-2xl md:text-3xl font-bold text-center text-black">POWER UP COFFEE</h2>
+                    </div>
+                </div>
+
+                <!-- Myllo -->
+                <div class="flex flex-col items-center mb-12">
+                    <img alt="Myllo" class="w-full max-w-xs md:max-w-md" height="600" src="img/Rectangle 79@2x.png" width="400"/>
+                    <div class="bg-[#EFE0B5] py-2 px-4 mt-4 w-full max-w-xs md:max-w-md">
+                        <h2 class="text-2xl md:text-3xl font-bold text-center text-black">MYLLO</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 14: Perkhidmatan Yang Disediakan -->
+        <section class="w-full bg-[#B29126] text-white font-serif">
+            <div class="container mx-auto p-4">
+                <div class="mt-8">
+                    <!-- Mak Bidan -->
+                    <div class="flex flex-col items-center mb-16">
+                        <img alt="Mak Bidan" class="border-4 border-white w-full max-w-[270px] h-[300px] object-cover" src="img/Rectangle 73.png"/>
+                        <p class="mt-4 text-2xl text-center leading-tight">Losyen Minyak<br/>Mak Bidan</p>
+                    </div>
+
+                    <!-- Sabun -->
+                    <div class="flex flex-col items-center mb-16">
+                        <img alt="Sabun" class="border-4 border-white w-full max-w-[270px] h-[300px] object-cover" src="img/Rectangle 74.png"/>
+                        <p class="mt-4 text-2xl text-center leading-tight">Sabun Herba<br/>Jerawat & Resdung</p>
+                    </div>
+
+                    <!-- Aromaterapi -->
+                    <div class="flex flex-col items-center mb-16">
+                        <img alt="Aromaterapi" class="border-4 border-white w-full max-w-[270px] h-[300px] object-cover" src="img/Rectangle 72.png"/>
+                        <p class="mt-4 text-2xl text-center leading-tight">Aura Aromaterapi<br/>Herba</p>
+                    </div>
+
+                    <!-- Zamzam -->
+                    <div class="flex flex-col items-center mb-16">
+                        <img alt="Zamzam" class="border-4 border-white w-full max-w-[270px] h-[300px] object-cover" src="img/Rectangle 357.png"/>
+                        <p class="mt-4 text-2xl text-center leading-tight">Aura Semburan<br/>Zamzam</p>
+                    </div>
+
+                    <!-- Mandian Garam -->
+                    <div class="flex flex-col items-center mb-16">
+                        <img alt="Mandian Garam" class="border-4 border-white w-full max-w-[270px] h-[300px] object-cover" src="img/Rectangle 75.png"/>
+                        <p class="mt-4 text-2xl text-center leading-tight">Aura Rendaman<br/>Mandian Garam</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 15: Hamper Promotion -->
+        <section id="section-15" class="w-full bg-black text-white flex flex-col items-center p-4">
+            <div>
+                <h1 class="text-center haettenschweiler mb-4">BELI HAMPER,<br/>PERCUMA KEAHLIAN !</h1>
+                <div class="flex justify-center mb-8">
+                    <img alt="Hamper1" class="rounded-full w-48 h-48 outline" height="200" src="img/Rectangle 355.png" width="200"/>
+                </div>
+                <div class="flex justify-center mb-4">
+                    <i class="fas fa-arrow-down text-yellow-500 text-3xl arrow-right"></i>
+                </div>
+                <div class="flex flex-col items-center space-y-8">
+                    <div class="flex items-center space-x-4">
+                        <p class="harlow-solid">RM 80</p>
+                        <img alt="Gold coin" class="w-48 h-32 outline" height="100" src="img/Component 166 – 1.png" width="200"/>
+                    </div>
+                    <i class="fas fa-arrow-down text-yellow-500 text-3xl my-2 arrow-left"></i>
+                    <div class="flex items-center space-x-4">
+                        <img alt="Silver ring" class="w-48 h-32 outline" height="100" src="img/Component 168 – 1.png" width="200"/>
+                        <p class="harlow-solid">RM 60</p>
+                    </div>
+                    <i class="fas fa-arrow-down text-yellow-500 text-3xl my-2 arrow-right"></i>
+                    <div class="flex items-center space-x-4">
+                        <p class="harlow-solid">RM 35</p>
+                        <img alt="Wake Up Coffee" class="w-48 h-32 outline" height="100" src="img/Component 169 – 2.png" width="200"/>
+                    </div>
+                    <i class="fas fa-arrow-down text-yellow-500 text-3xl my-2 arrow-left"></i>
+                    <div class="flex items-center space-x-4">
+                        <img alt="Another product" class="w-48 h-32 outline" height="100" src="img/Component 170 – 2.png" width="200"/>
+                        <p class="harlow-solid">RM 20</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 16: Hamper Packages -->
+        <section id="section-16" class="w-full bg-black text-white flex flex-col items-center py-12 px-4">
+            <!-- Silver Package -->
+            <div class="text-center mb-12">
+                <h1 class="text-3xl font-bold mb-6 text-white">1 HAMPER PAKEJ SILVER</h1>
+                <div class="flex justify-center mb-6">
+                    <img alt="Hamper Pakej Silver with various items including a flower, a black package, and a red box" class="rounded-lg w-56 h-80 object-cover" src="https://storage.googleapis.com/a1aa/image/oNIMJeaNoiQItHgsTR3epe4qKC2awpt6nNVImVVM29c.jpg"/>
+                </div>
+                <h2 class="text-[#B29126] text-lg font-bold mb-4">KEAHLIAN PERCUMA !</h2>
+                <p class="text-center text-lg leading-relaxed mb-4">1 akaun (P.O.I) Point Of Income dalam sistem TABUNG PERKONGSIAN yang boleh menjana pendapatan sehingga RM20,000.</p>
+                <p class="text-center text-lg leading-relaxed">Nikmati sehingga<br/>9 TAWARAN ISTIMEWA.</p>
+            </div>
+
+            <!-- Gold Package -->
+            <div class="text-center mb-12">
+                <h1 class="text-3xl font-bold mb-6 text-yellow-500">2 HAMPER PAKEJ GOLD</h1>
+                <div class="flex justify-center mb-6">
+                    <img alt="Hamper Pakej Gold with various items including a flower, a black package, and a red box" class="rounded-lg w-56 h-80 object-cover" src="https://storage.googleapis.com/a1aa/image/vB1B_xp-OzodqPp2BauvNdX0uuvSbMcMZ8HhgD0O0nI.jpg"/>
+                </div>
+                <h2 class="text-[#B29126] text-lg font-bold mb-4">KEAHLIAN PERCUMA !</h2>
+                <p class="text-center text-lg leading-relaxed mb-4">2 akaun (P.O.I) Point Of Income dalam sistem TABUNG PERKONGSIAN yang boleh menjana pendapatan sehingga RM20,000.</p>
+                <p class="text-center text-lg leading-relaxed">Nikmati sehingga<br/>9 TAWARAN ISTIMEWA.</p>
+            </div>
+
+            <!-- Bronze Package -->
+            <div class="text-center mb-12">
+                <h1 class="text-3xl font-bold mb-6" style="color: #FF4C6E;">3 HAMPER PAKEJ BRONZE</h1>
+                <div class="flex justify-center mb-6">
+                    <img alt="Hamper Pakej Bronze with various items including a flower, a black package, and a red box" class="rounded-lg w-56 h-80 object-cover" src="https://storage.googleapis.com/a1aa/image/oNIMJeaNoiQItHgsTR3epe4qKC2awpt6nNVImVVM29c.jpg"/>
+                </div>
+                <h2 class="text-[#B29126] text-lg font-bold mb-4">KEAHLIAN PERCUMA !</h2>
+                <p class="text-center text-lg leading-relaxed mb-4">3 akaun (P.O.I) Point Of Income dalam sistem TABUNG PERKONGSIAN yang boleh menjana pendapatan sehingga RM20,000.</p>
+                <p class="text-center text-lg leading-relaxed">Nikmati sehingga<br/>9 TAWARAN ISTIMEWA.</p>
+            </div>
+        </section>
+
+        <!-- Section 17: Product Page -->
+        <section id="section-17" class="w-full bg-[#B29126] flex flex-col items-center justify-center min-h-screen py-12 px-4">
+            <div class="text-center">
+                <!-- Gold Seal -->
+                <img alt="Gold seal with text '100% ORIGINAL PRODUCT'" class="circle-img mx-auto mb-6" height="200" src="img/Ellipse 7.png" width="200"/>
+                <p class="text-white text-xl font-normal mb-8">HARGA LEBIH MURAH UNTUK PRODUK EMAS, PERAK, BATU PERMATA, KESIHATAN DAN KECANTIKAN</p>
+                <img alt="Gold globe icon" class="circle-img mx-auto mb-6" height="200" src="img/Ellipse 31.png" width="200"/>
+                <p class="text-white text-xl font-normal mb-8">LAMAN WEB PERIBADI</p>
+                <div class="text-center">
+                    <img alt="Additional image 1" class="circle-img mx-auto mb-6" height="200" src="img/Ellipse 32.png" width="200"/>
+                    <p class="text-white text-xl font-normal mb-8">JANA PENDAPATAN UNTUNG RUNCIT, BONUS PERIBADI, BONUS TAJAAN, BONUS RAKAN KONGSI DAN BONUS KEPIMPINAN</p>
+                </div>
+                <div class="text-center">
+                    <img alt="Additional image 2" class="circle-img mx-auto mb-6" height="200" src="img/Ellipse 33.png" width="200"/>
+                    <p class="text-white text-xl font-normal mb-8">LATIHAN PERCUMA</p>
+                </div>
+                <div class="text-center">
+                    <img alt="Additional image 3" class="circle-img mx-auto mb-6" height="200" src="img/Ellipse 34.png" width="200"/>
+                    <p class="text-white text-xl font-normal mb-8">MELANCONG PERCUMA</p>
+                </div>
+                <div class="text-center">
+                    <img alt="Additional image 4" class="circle-img mx-auto mb-6" height="200" src="img/Ellipse 37.png" width="200"/>
+                    <p class="text-white text-xl font-normal mb-8">TEBUS MATA GANJARAN</p>
+                </div>
+                <div class="text-center">
+                    <img alt="Additional image 5" class="circle-img mx-auto mb-6" height="200" src="img/Ellipse 38.png" width="200"/>
+                    <p class="text-white text-xl font-normal mb-8">TABUNG PERKONGSIAN</p>
+                </div>
+                <div class="text-center">
+                    <img alt="Additional image 6" class="circle-img mx-auto mb-6" height="200" src="img/Ellipse 39.png" width="200"/>
+                    <p class="text-white text-xl font-normal mb-8">CABUTAN BERTUAH</p>
+                </div>
+                <div class="text-center">
+                    <img alt="Additional image 7" class="circle-img mx-auto mb-6" height="200" src="img/Ellipse 114.png" width="200"/>
+                    <p class="text-white text-xl font-normal mb-8">KUMPULAN SOKONGAN</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 18: Umrah Package -->
+        <section class="w-full bg-black text-white flex flex-col items-center justify-center min-h-screen py-24 px-4">
+            <div class="text-center">
+                <!-- Title -->
+                <h1 class="font-gloucester text-4xl md:text-xl font-normal leading-tight mb-2">PELUANG MENANGI</h1>
+                <h1 class="font-gloucester text-4xl md:text-5xl font-normal leading-tight mb-12">PAKEJ UMRAH !</h1>
+            </div>
+
+            <div class="relative mt-12 w-full max-w-2xl mx-auto">
+                <!-- Slideshow Container -->
+                <div class="slideshow-container-umrah relative w-full h-96 overflow-hidden">
+                    <div class="slideshow-wrapper-umrah flex transition-transform duration-1000 ease-in-out">
+                        <img alt="slideshow4" class="slideshow-image-umrah w-full h-96 object-cover" src="img/umrah 7.png"/>
+                        <img alt="slideshow5" class="slideshow-image-umrah w-full h-96 object-cover" src="img/umrah 7-1.png"/>
+                        <img alt="slideshow6" class="slideshow-image-umrah w-full h-96 object-cover" src="img/umrah 7-2.png"/>
+                        <img alt="slideshow7" class="slideshow-image-umrah w-full h-96 object-cover" src="img/umrah 7-3.png"/>
+                        <img alt="slideshow8" class="slideshow-image-umrah w-full h-96 object-cover" src="img/umrah 7-4.png"/>
+                        <img alt="slideshow9" class="slideshow-image-umrah w-full h-96 object-cover" src="img/umrah 7-5.png"/>
+                        <img alt="slideshow10" class="slideshow-image-umrah w-full h-96 object-cover" src="img/umrah 7-6.png"/>
+                    </div>
+                </div>
+                <!-- Arrows -->
+                <div class="arrow arrow-left absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer" onclick="changeSlideUmrah(-1)">
+                    <i class="fas fa-chevron-left text-3xl text-yellow-500"></i>
+                </div>
+                <div class="arrow arrow-right absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer" onclick="changeSlideUmrah(1)">
+                    <i class="fas fa-chevron-right text-3xl text-yellow-500"></i>
+                </div>
+                <!-- Dots -->
+                <div class="flex justify-center mt-6">
+                    <div class="w-2 h-2 rounded-full mx-1 bg-[#B29126]"></div>
+                    <div class="w-2 h-2 rounded-full mx-1 bg-[#EFE0B5]"></div>
+                    <div class="w-2 h-2 rounded-full mx-1 bg-[#B29126]"></div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <h2 class="font-gloucester text-4xl md:text-5xl font-normal leading-tight text-white">PELAN</h2>
+                <h2 class="font-gloucester text-4xl md:text-5xl font-normal leading-tight text-yellow-500">PEMASARAN</h2>
+            </div>
+
+            <!-- Button to Open the Pop-up -->
+<div class="mt-12">
+    <button id="open-popup" class="bg-white text-black px-8 py-3 rounded-full font-bold baca-button text-lg">BACA &gt;</button>
+</div>
+
+<!-- Pop-up Structure -->
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        <div class="text-content">
+            <p>- Miliki LAMAN WEB PERIBADI.</p>
+            <p>- Diskaun HARGA LEBIH MURAH mengikut level keahlian untuk produk emas, perak, batu permata, kesihatan dan kecantikan.</p>
+            <p>- Mendapat KEUNTUNGAN RUNCIT jika terdapat urusan jual beli dengan pelanggan sendiri.</p>
+            <p>- Memperoleh PENDAPATAN JIKA MEMPERKENALKLAN ORANG BARU untuk membeli salah satu hamper pakej keahlian percuma.</p>
+            <p>- Memperoleh PENDAPATAN 7 GENERASI jika ada orang baru yang membeli hamper yang ada.</p>
+            <p>- Memperoleh TABUNG PERKONGSIAN SYARIKAT secara automatik dari sistem yang telah diprogramkan kiraan.</p>
+            <p>- Memperoleh PENDAPATAN MELALUI KUMPULAN ATAU GENERASI secara automatik melalui sistem UNILEVEL dan sistem MATRIK yang telah diprogramkan kiraannya.</p>
+            <p>- PENEBUSAN MATA GANJARAN yang diperoleh daripada pembelian.</p>
+            <p>- LATIHAN PERCUMA daripada pihak syarikat tentang cara untuk menjana pendapatan setelah menyertai keahlian.</p>
+            <p>- Peluang MELANCONG PERCUMA jika cukup syarat semasa yang ditetapkan.</p>
+            <p>- Peluang MENANGI HADIAH CABUTAN BERTUAH.</p>
+            <p>- Mendapat SOKONGAN PERCUMA daripada pihak syarikat dan ahli kumpulan.</p>
+        </div>
+        <button id="close-popup" class="close-button">Close</button>
+    </div>
+</div>
+        </section>
+
+        <!-- Section 19: Aktiviti -->
+        <section id="section-19" class="w-full bg-white text-center py-16">
+            <header class="text-center py-4">
+                <h1 class="font-gloucester text-6xl md:text-xl font-normal leading-tight mb-2">AKTIVITI</h1>
+            </header>
+            <main class="px-4">
+                <div class="w-full h-auto mb-4">
+                    <img alt="Various activities and events" class="w-full h-auto object-contain" src="img/x 1@2x.png"/>
+                </div>
+                <div class="w-full h-auto mb-4">
+                    <img alt="Various activities and events" class="w-full h-auto object-contain" src="img/x 2.png"/>
+                </div>
+                <div class="w-full h-auto mb-4">
+                    <img alt="Various activities and events" class="w-full h-auto object-contain" src="img/x 3.png"/>
+                </div>
+                <div class="w-full h-auto mb-4">
+                    <img alt="Various activities and events" class="w-full h-auto object-contain" src="img/x 4.png"/>
+                </div>
+                <div class="w-full h-auto mb-4">
+                    <img alt="Various activities and events" class="w-full h-auto object-contain" src="img/x 5.png"/>
+                </div>
+                <div class="w-full h-auto mb-4">
+                    <img alt="Various activities and events" class="w-full h-auto object-contain" src="img/x 6.png"/>
+                </div>
+                <div class="w-full h-auto mb-4">
+                    <img alt="Various activities and events" class="w-full h-auto object-contain" src="img/x 7.png"/>
+                </div>
+                <div class="w-full h-auto mb-4">
+                    <img alt="Various activities and events" class="w-full h-auto object-contain" src="img/x 8.png"/>
+                </div>
+                <div class="w-full h-auto mb-4">
+                    <img alt="Various activities and events" class="w-full h-auto object-contain" src="img/x 9.png"/>
+                </div>
+            </main>
+        </section>
+
+        <!-- Section 20: Call to Action -->
+        <section class="w-full relative min-h-screen flex items-center justify-center mb-8">
+            <img alt="Background with a heart-shaped diamond and glowing lights" class="absolute inset-0 w-full h-full object-cover opacity-70" height="800" src="https://storage.googleapis.com/a1aa/image/dAwxdU9Ouy-qZ8S4i5Wex9jH7kO999yp3pQkgDNV7VM.jpg" width="600"/>
+            <div class="relative text-center px-4">
+                <h1 class="font-gloucester text-5xl md:text-xl font-normal leading-tight mb-4 text-white">JANGAN LEPASKAN PELUANG INI<br/>DAN<br/>KLIK BUTANG<br/>DAFTAR SEKARANG !</h1>
+                <div class="space-y-4">
+                    <div>
+                        <button class="custom-button bg-transparent border-2 py-2 px-6 rounded-full text-lg w-3/4 mb-2">DAFTAR</button>
+                    </div>
+                    <div>
+                        <button class="custom-button bg-transparent border-2 py-2 px-6 rounded-full text-lg w-3/4">HUBUNGI KAMI</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 21: Profile -->
+        <section class="w-full relative z-10 flex flex-col items-center py-8 min-h-screen">
+            <div class="absolute inset-0 z-0">
+                <img alt="Dark themed background image with abstract patterns and textures" class="w-full h-full object-cover opacity-50" height="1080" src="https://storage.googleapis.com/a1aa/image/8kOuCWxb6BCRvsUPhwgJlOG9WYt-IGILrm2q-eLpDbY.jpg" width="1920"/>
+            </div>
+            <div class="relative z-10 flex flex-col items-center">
+                <div class="w-60 h-60 rounded-full overflow-hidden mb-4">
+                    <img alt="Profile picture" height="240" src="img/Component 177 – 1.png" width="240"/>
+                </div>
+                <p class="text-center mt-2 imprint-font">FOUNDER<br/>&amp;<br/>MANAGING DIRECTOR,<br/>DNG EMPIRE GLOBAL MARKETING</p>
+                <div class="mt-6 w-full px-4">
+                    <a class="flex items-center justify-center mb-2" href="https://www.wasap.my/+60177937699/NakBeliHamperPercumaKeahlian">
+                        <img alt="whatssap" class="w-3/4 h-11 rounded-full" height="40" src="img/Component 175 – 1.png" width="200"/>
+                    </a>
+                    <a class="flex items-center justify-center mb-2" href="https://t.me/+fWDM4nIJNp41NmY1">
+                        <img alt="telegram" class="w-3/4 h-11 rounded-full" height="40" src="img/Component 172 – 1.png" width="200"/>
+                    </a>
+                    <a class="flex items-center justify-center mb-2" href="https://www.facebook.com/share/15nQnWpvDz/">
+                        <img alt="facebook" class="w-3/4 h-11 rounded-full" height="40" src="img/Component 174 – 1.png" width="200"/>
+                    </a>
+                    <a class="flex items-center justify-center mb-2" href="https://www.tiktok.com/@emasperakpematadngempire?_t=ZS-8tR1YZZLEZj&amp;_r=1">
+                        <img alt="tiktok" class="w-3/4 h-11 rounded-full" height="40" src="img/Component 173 – 1.png" width="200"/>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+     <!-- Navigation Menu -->
+    <div class="nav-menu" id="nav-menu">
+        <a class="bg-white text-black text-xl font-semibold px-6 py-3 rounded-full mb-4 text-center w-48 h-12 flex items-center justify-center" href="#section-4">TENTANG KAMI</a>
+        <a class="bg-white text-black text-xl font-semibold px-6 py-3 rounded-full mb-4 text-center w-48 h-12 flex items-center justify-center" href="#section-15">HAMPER PAKEJ</a>
+        <a class="bg-white text-black text-xl font-semibold px-6 py-3 rounded-full mb-4 text-center w-48 h-12 flex items-center justify-center" href="#section-17">KEISTIMEWAAN AHLI</a>
+        <a class="bg-white text-black text-xl font-semibold px-6 py-3 rounded-full mb-4 text-center w-48 h-12 flex items-center justify-center" href="#section-19">AKTIVITI</a>
+
+        <button class="bg-white text-black text-xl font-semibold px-6 py-3 rounded-full mt-8 text-center w-48 h-12 flex items-center justify-center" id="menu-close">Back</button>
+    </div>
+        
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</div>
+</body>
+</html>
